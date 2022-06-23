@@ -43,6 +43,19 @@ inquirer.prompt(questions).then(answers => {
 function writeToFile(fileName, data) {
     const markDown = generateMarkdown(data);
     console.log(markDown)
+    fetch("https://gist.github.com/2a5d00690736b4c3a7ba.git")
+        .then(response => response.json())
+        .then(function (fetchData) {
+            console.log(fetchData);
+        });
+    console.log(fetchData)
+    // fs.writeFile(`${data.title}.md`, JSON.parse(JSON.stringify(markDown)), err => {
+    //     if (err) {
+    //       console.log(err);
+    //       return;
+    //     }
+    //     console.log('success');
+    //   })
 }
 
 // // TODO: Create a function to initialize app
