@@ -1,10 +1,16 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const fetch = require("node-fetch");
+const moment = require("moment");
 const generateMarkdown = require("./utils/generateMarkdown")
 // TODO: Create an array of questions for user input
+// console.log(moment().format('dddd'))
 const questions = [
+    {
+        message: "What is your full name?",
+        name: "userName",
+        type: "input",
+    },
     {
         message: "What is the title of your project?",
         name: "title",
@@ -50,16 +56,10 @@ const questions = [
 inquirer.prompt(questions).then(answers => {
     writeToFile("someFileName", answers)
 })
-
+const year = moment().format("YYYY");
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    const markDown = generateMarkdown(data);
-    // console.log(markDown)
-    fetch('https://shields.io/category/license')
-        // .then(response => response.text())
-        // .then(data => console.log(data));
-
-
+    const markDown = generateMarkdown(data, year);
     fs.writeFile(`${data.title}.md`, JSON.parse(JSON.stringify(markDown)), err => {
         if (err) {
           console.log(err);

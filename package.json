@@ -11,6 +11,7 @@
     "inquirer": "^6.5.2",
     "jquery": "^3.6.0",
     "jsdom": "^20.0.0",
+    "moment": "^2.29.3",
     "node-fetch": "2.0"
   },
   "repository": {
