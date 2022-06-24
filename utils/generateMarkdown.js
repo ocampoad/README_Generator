@@ -94,22 +94,23 @@ function generateMarkdown(data, year) {
   4. [License](#license)
   5. [Contributing](#contributing)
   6. [Tests](#tests)
-  7. [Questions]($questions)\n
+  7. [Questions](#questions)\n
   ## Description\n
   ${data.description}\n
   ## Installation\n
   ${data.installation}\n
   ## Usage\n
   ${data.usage}\n
-  ## License\n
-  [${data.license}]${renderLicenseLink(data.license)}\n
+  ## License-[${data.license}]${renderLicenseLink(data.license)}\n
   ${renderLicenseSection(data.license, year, data.userName)}\n
   ## Contributing\n
   ${data.contributing}\n
   ## Tests\n
   ${data.tests}\n
   ## Questions\n
-  ${data.questions}\n
+  [GitHub: ${data.userName}](${data.github})\n
+  [Email: ${data.userName}](${data.email})\n
+  If you have any questions or concerns, do not hesitate to contact me at this email address. 
 `;
 }
 
